@@ -2,8 +2,27 @@
     background-color: $color-primary;
     grid-column: sidebar;
     grid-row: 1 / -1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
 }
 
 .nav-btn {
@@ -25,10 +44,30 @@
     }
 
     &::before {
-        transform: translateY(-1.5rem);
+        -webkit-transform: translateY(-1.5rem);
+            -ms-transform: translateY(-1.5rem);
+                transform: translateY(-1.5rem);
     }
     
     &::after {
-        transform: translateY(1.3rem);
+        -webkit-transform: translateY(1.3rem);
+            -ms-transform: translateY(1.3rem);
+                transform: translateY(1.3rem);
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+        margin-top: 0;
+        margin-right: 3rem;
+        &::before {
+            -webkit-transform: translateY(-1.2rem);
+                -ms-transform: translateY(-1.2rem);
+                    transform: translateY(-1.2rem);
+        }
+
+        &::after {
+            -webkit-transform: translateY(1.0rem);
+                -ms-transform: translateY(1.0rem);
+                    transform: translateY(1.0rem);
+        }
     }
 }
